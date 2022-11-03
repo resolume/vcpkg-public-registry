@@ -1,8 +1,8 @@
 diff --git a/libavformat/movenc.c b/libavformat/movenc.c
-index 8fdce359db..138354c232 100644
+index 5608afde42..6edef4b5c4 100644
 --- a/libavformat/movenc.c
 +++ b/libavformat/movenc.c
-@@ -4044,18 +4044,19 @@ static int mov_write_uuidusmt_tag(AVIOContext *pb, AVFormatContext *s)
+@@ -4380,18 +4380,19 @@ static int mov_write_uuidusmt_tag(AVIOContext *pb, AVFormatContext *s)
      return 0;
  }
  
@@ -24,7 +24,7 @@ index 8fdce359db..138354c232 100644
              chunkSize             += trk->cluster[i].size;
              chunk->samples_in_chunk += trk->cluster[i].entries;
          } else {
-@@ -4130,7 +4131,7 @@ static int mov_write_moov_tag(AVIOContext *pb, MOVMuxContext *mov,
+@@ -4466,7 +4467,7 @@ static int mov_write_moov_tag(AVIOContext *pb, MOVMuxContext *mov,
          mov->tracks[i].time     = mov->time;
  
          if (mov->tracks[i].entry)
