@@ -24,6 +24,7 @@ vcpkg_from_github(
         0018-libaom-Dont-use-aom_codec_av1_dx_algo.patch
         0019-libx264-Do-not-explicitly-set-X264_API_IMPORTS.patch
         0020-fix-aarch64-libswscale.patch
+        0022-fix-m1-hardware-decode-nal-bits
         1000-resolume-small-memory-allocations.patch
         1001-max_chunk_size-from-format-context-in-build_chunks.patch
         1002-proresdec2-no-colorspace-override.patch
