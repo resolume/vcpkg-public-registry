@@ -1,9 +1,9 @@
 diff --git a/libavcodec/proresdec2.c b/libavcodec/proresdec2.c
-index fe1f3a28bd..c5457e0024 100644
+index 385ca2fb1c..c93aed9c64 100644
 --- a/libavcodec/proresdec2.c
 +++ b/libavcodec/proresdec2.c
-@@ -264,9 +264,17 @@ static int decode_frame_header(ProresContext *ctx, const uint8_t *buf,
-         }
+@@ -290,9 +290,17 @@ static int decode_frame_header(ProresContext *ctx, const uint8_t *buf,
+         avctx->pix_fmt = ret;
      }
  
 -    avctx->color_primaries = buf[14];

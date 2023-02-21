@@ -1,9 +1,9 @@
 diff --git a/libavutil/buffer.c b/libavutil/buffer.c
-index 858633e8c7..b96eab0a7b 100644
+index 54590be566..9f7fbf203a 100644
 --- a/libavutil/buffer.c
 +++ b/libavutil/buffer.c
-@@ -59,23 +59,56 @@ AVBufferRef *av_buffer_create(uint8_t *data, buffer_size_t size,
-     return ref;
+@@ -69,23 +69,56 @@ AVBufferRef *av_buffer_create(uint8_t *data, size_t size,
+     return ret;
  }
  
 +PFNBufferAlloc externalAllocFunc = NULL;
@@ -26,7 +26,7 @@ index 858633e8c7..b96eab0a7b 100644
 +        externalDeallocFunc( data );
 +}
  
- AVBufferRef *av_buffer_alloc(buffer_size_t size)
+ AVBufferRef *av_buffer_alloc(size_t size)
  {
      AVBufferRef *ret = NULL;
      uint8_t    *data = NULL;
@@ -66,11 +66,11 @@ index 858633e8c7..b96eab0a7b 100644
      return ret;
  }
 diff --git a/libavutil/buffer.h b/libavutil/buffer.h
-index 241a80ed67..5af6ad1204 100644
+index e1ef5b7f07..3debdd78ae 100644
 --- a/libavutil/buffer.h
 +++ b/libavutil/buffer.h
-@@ -100,6 +100,29 @@ typedef struct AVBufferRef {
- #endif
+@@ -94,6 +94,29 @@ typedef struct AVBufferRef {
+     size_t   size;
  } AVBufferRef;
  
 +#if defined(_WIN32)
