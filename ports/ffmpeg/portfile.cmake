@@ -75,6 +75,8 @@ else()
 endif()
 
 if(VCPKG_TARGET_IS_OSX)
+    # we want our libs with @rpath for development
+    string(APPEND OPTIONS " --install_name_dir=@rpath")
     list(JOIN VCPKG_OSX_ARCHITECTURES " " OSX_ARCHS)
     list(LENGTH VCPKG_OSX_ARCHITECTURES OSX_ARCH_COUNT)
 endif()
